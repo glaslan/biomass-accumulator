@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dok5on1wvpbhq"]
+[gd_scene load_steps=4 format=3 uid="uid://dok5on1wvpbhq"]
 
 [ext_resource type="PackedScene" uid="uid://bew3flrfgxpld" path="res://biomass.gltf" id="1_705ar"]
+[ext_resource type="Script" path="res://lsystem.gd" id="1_a2c21"]
+[ext_resource type="PackedScene" uid="uid://dy7v2ypdk0s3o" path="res://breathing_component.tscn" id="3_e0sg1"]
 
 [node name="BioNode" type="Node3D" groups=["BioNode"]]
+script = ExtResource("1_a2c21")
 
 [node name="blockbench_export" parent="." instance=ExtResource("1_705ar")]
+
+[node name="BreathingComponent" parent="." node_paths=PackedStringArray("mesh_ins") instance=ExtResource("3_e0sg1")]
+mesh_ins = NodePath("../blockbench_export")

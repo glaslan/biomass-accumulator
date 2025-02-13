@@ -30,5 +30,4 @@ light_energy = 6.172
 spot_range = 22.9817
 spot_angle = 62.5592
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="Spawner" method="_on_button_pressed"]
