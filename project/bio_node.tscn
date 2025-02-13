@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dok5on1wvpbhq"]
+
+[ext_resource type="PackedScene" uid="uid://bew3flrfgxpld" path="res://biomass.gltf" id="1_705ar"]
+
+[node name="BioNode" type="Node3D" groups=["BioNode"]]
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_705ar")]
