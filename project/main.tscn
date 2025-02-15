@@ -17,17 +17,31 @@ current = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rlprw")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 30.0
-offset_top = 589.0
-offset_right = 126.0
-offset_bottom = 620.0
-text = "Feed it"
-
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.442101, 0.896965, 0, -0.896965, 0.442101, 0, 17.3342, 8.11552)
 light_energy = 6.172
 spot_range = 22.9817
 spot_angle = 62.5592
 
-[connection signal="pressed" from="Button" to="Spawner" method="_on_button_pressed"]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 549.0
+offset_right = 71.0
+offset_bottom = 589.0
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+offset_right = 93.0
+offset_bottom = 31.0
+text = "Audio"
+
+[node name="Button" type="Button" parent="Control"]
+offset_left = -1.0
+offset_top = 40.0
+offset_right = 95.0
+offset_bottom = 71.0
+text = "Feed it"
+
+[connection signal="toggled" from="Control/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Control/Button" to="Spawner" method="_on_button_pressed"]
