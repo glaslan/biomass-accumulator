@@ -1,6 +1,6 @@
 extends Node
 
-@export var stream : AudioStream
+var stream : AudioStream = preload("res://squish.wav")
 
 func _ready() -> void:
 	var audio = AudioStreamPlayer.new()
